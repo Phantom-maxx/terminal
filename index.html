@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Python IDLE‑style Web IDE</title>
+
+  <!-- CodeMirror core -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+  <!-- IDLE theme -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/idle.min.css">
+
+  <!-- Custom styling -->
+  <link rel="stylesheet" href="static/style.css">
+
+  <!-- CodeMirror + Python mode -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/python/python.min.js"></script>
+
+  <!-- Pyodide -->
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+</head>
+<body>
+  <!-- Top Menu Bar -->
+  <header>
+    <div class="menu">
+      <button onclick="newFile()">New</button>
+      <button onclick="openFile()">Open</button>
+      <button onclick="saveFile()">Save</button>
+      <button class="run" onclick="runCode()">Run (F5)</button>
+      <input type="file" id="file-input" style="display:none" accept=".py">
+    </div>
+  </header>
+
+  <!-- Editor -->
+  <section>
+    <textarea id="code">print("Hello, IDLE‑style IDE!")</textarea>
+  </section>
+
+  <!-- Output -->
+  <section>
+    <h3>Shell Output:</h3>
+    <pre id="output"></pre>
+  </section>
+
+  <script src="static/editor.js"></script>
+</body>
+</html>
